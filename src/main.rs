@@ -7,15 +7,7 @@ fn main() {
 }
 
 fn catspeak(text: &str) -> String {
-    let cat = r#"
- |\ /|
-/ . . \
-\ _-_ /      #Text#
- |   |     _
- |    \   /
- |     |-/
- |_|_ /
-        "#;
+    let cat = include_str!("../res/cat.txt");
     let cat = cat.replace("#Text#", text);
     cat.to_string()
 }
