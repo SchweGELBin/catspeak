@@ -43,8 +43,12 @@ fn get_text() -> (String, Option<u8>) {
         return ("Usage: catspeak <option> \"<message>\"".to_string(), None);
     }
     if option == "--random" || option == "-r" {
+        let cats = include_str!("../res/cats.txt");
+        let start = cats.find(":").unwrap();
+        let end = cats.find(";").unwrap();
+        let cat_count: u8 = cats[start+1..end].parse().expect("Error getting cat count");
         let mut rng = rand::thread_rng();
-        return (text.to_string(), Some(rng.gen_range(0..=1)));
+        return (text.to_string(), Some(rng.gen_range(0..cat_count)));
     }
     (text.to_string(), Some(0))
 }
