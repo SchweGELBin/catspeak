@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/SchweGELBin/catspeak/compare/v0.1.1...v0.2.0) (2024-06-03)
+
+
+### Features
+
+* add option parameter ([213c42b](https://github.com/SchweGELBin/catspeak/commit/213c42bae8643a176fb8182e8f1efc29cc25ef1f))
+
 ## [0.1.1](https://github.com/SchweGELBin/catspeak/compare/v0.1.0...v0.1.1) (2024-06-03)
 
 
