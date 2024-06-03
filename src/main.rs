@@ -1,4 +1,5 @@
 use std::env;
+use rand::Rng;
 
 fn main() {
     let input = get_text();
@@ -9,9 +10,15 @@ fn main() {
 fn catspeak(text: &str, cat_index: Option<u8>) -> String {
     let mut cat = text.to_string();
     if cat_index.is_some() {
-        cat = include_str!("../res/cat.txt").replace("#Text#", text);
+        let cats = include_str!("../res/cats.txt");
+        let start_index = format!("#S{:?}#", cat_index.unwrap());
+        let end_index = format!("#E{:?}#", cat_index.unwrap());
+        let start = cats.find(&start_index).expect("Error");
+        let end = cats.find(&end_index).expect("Error"); 
+        cat = cats[start..end].replace("#T#", text);
+        cat = cat.replace(&start_index, "");
     }
-    cat
+    cat.to_string()
 }
 
 fn get_text() -> (String, Option<u8>) {
@@ -36,7 +43,8 @@ fn get_text() -> (String, Option<u8>) {
         return ("Usage: catspeak <option> \"<message>\"".to_string(), None);
     }
     if option == "--random" || option == "-r" {
-        return (text.to_string(), Some(0));
+        let mut rng = rand::thread_rng();
+        return (text.to_string(), Some(rng.gen_range(0..=1)));
     }
     (text.to_string(), Some(0))
 }
