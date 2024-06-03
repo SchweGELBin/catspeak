@@ -13,8 +13,8 @@ fn catspeak(text: &str, cat_index: Option<u8>) -> String {
         let cats = include_str!("../res/cats.txt");
         let start_index = format!("#S{:?}#", cat_index.unwrap());
         let end_index = format!("#E{:?}#", cat_index.unwrap());
-        let start = cats.find(&start_index).expect("Error");
-        let end = cats.find(&end_index).expect("Error"); 
+        let start = cats.find(&start_index).expect("Error finding start index");
+        let end = cats.find(&end_index).expect("Error finding end index"); 
         cat = cats[start..end].replace("#T#", text);
         cat = cat.replace(&start_index, "");
     }
