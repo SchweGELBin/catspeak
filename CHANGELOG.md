@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/SchweGELBin/catspeak/compare/v0.1.0...v0.1.1) (2024-06-03)
+
+
+### Bug Fixes
+
+* read cat string from res ([3ca83f6](https://github.com/SchweGELBin/catspeak/commit/3ca83f61d720bc1e75426e42fe963fa571b44690))
+
 ## 0.1.0 (2024-06-03)
 
 
