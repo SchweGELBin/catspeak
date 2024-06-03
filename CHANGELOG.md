@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/SchweGELBin/catspeak/compare/v0.2.0...v0.3.0) (2024-06-03)
+
+
+### Features
+
+* add random option ([50fd2c6](https://github.com/SchweGELBin/catspeak/commit/50fd2c671759cfc11977e3ab0b3793c58df2caf2))
+
 ## [0.1.1](https://github.com/SchweGELBin/catspeak/compare/v0.1.0...v0.1.1) (2024-06-03)
 
 
