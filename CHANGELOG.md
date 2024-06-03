@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/SchweGELBin/catspeak/compare/v0.3.1...v0.4.0) (2024-06-03)
+
+
+### Features
+
+* get cat count from file ([ca45ffc](https://github.com/SchweGELBin/catspeak/commit/ca45ffc97fad9a1c2cd519c2da91c58ed46330eb))
+
 ## [0.3.1](https://github.com/SchweGELBin/catspeak/compare/v0.3.0...v0.3.1) (2024-06-03)
 
 
