@@ -1,5 +1,5 @@
-use std::env;
 use rand::Rng;
+use std::env;
 
 fn main() {
     let input = get_text();
@@ -14,7 +14,7 @@ fn catspeak(text: &str, cat_index: Option<u8>) -> String {
         let start_index = format!("#S{:?}#", cat_index.unwrap());
         let end_index = format!("#E{:?}#", cat_index.unwrap());
         let start = cats.find(&start_index).expect("Error finding start index");
-        let end = cats.find(&end_index).expect("Error finding end index"); 
+        let end = cats.find(&end_index).expect("Error finding end index");
         cat = cats[start..end].replace("#T#", text);
         cat = cat.replace(&start_index, "");
     }
@@ -31,7 +31,7 @@ fn get_text() -> (String, Option<u8>) {
     let mut text = &args[1];
     if args[1].starts_with("-") {
         if args.len() <= 2 {
-            if &args[1] != "--help" && &args[1] != "-h"{
+            if &args[1] != "--help" && &args[1] != "-h" {
                 return (err_msg, None);
             }
         } else {
