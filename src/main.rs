@@ -22,39 +22,49 @@ fn catspeak(text: &str, cat_index: Option<u8>) -> String {
 }
 
 fn get_text() -> (String, Option<u8>) {
-    let usage_msg = "Usage: catspeak [options] \"<message>\"".to_string();
-    let help_msg = format!("Cowsay like program of a speaking cat\n\n{usage_msg}\n\nOptions:\n  -h, --help\tPrint this message\n  -r, --random\tUse a random cat").to_string();
+    let name = "catspeak";
+    let err_msg = format!("Error: See \"{name} --help\"");
+    let usage_msg = format!("Usage: {name} [options] \"<message>\"");
+    let help_msg = format!("Cowsay like program of a speaking cat\n\n{usage_msg}\n\nOptions:\n  -h, --help\tPrint this message\n  -r, --random\tUse a random cat");
+
+    let mut catid = 0;
+    let mut option: Option<String> = None;
+    let mut text = usage_msg;
 
     let args: Vec<String> = env::args().collect();
-    if args.len() <= 1 {
-        return (usage_msg, None);
-    }
-
-    let mut option = String::new();
-    let mut text = &args[1];
-    if args[1].starts_with("-") {
-        if args.len() <= 2 {
-            if &args[1] != "--help" && &args[1] != "-h" {
-                return (usage_msg, None);
+    match args.len() {
+        2 => {
+            text = args[1].clone();
+            if text.starts_with("-") {
+                let allow = ["-h", "--help", "-v", "--version"];
+                if allow.contains(&text.as_str()) {
+                    option = Some(text.clone())
+                } else {
+                    return (err_msg, None);
+                }
             }
-        } else {
-            text = &args[2];
         }
-        option = args[1].clone();
-    }
-    if &args[1] == "--help" || &args[1] == "-h" {
-        return (help_msg, None);
-    }
-    if option == "--random" || option == "-r" {
-        let cats = include_str!("../res/cats.txt");
-        let start = cats.find(":").unwrap();
-        let end = cats.find(";").unwrap();
-        let cat_count: u8 = cats[start + 1..end]
-            .parse()
-            .expect("Error getting cat count");
-        let mut rng = rand::rng();
-        return (text.to_string(), Some(rng.random_range(0..cat_count)));
+        3 => {
+            option = Some(args[1].clone());
+            text = args[2].clone();
+        }
+        _ => return (text, None),
     }
 
-    (text.to_string(), Some(0))
+    if option.is_some() {
+        match option.unwrap().as_str() {
+            "-h" | "--help" => return (help_msg, None),
+            "-r" | "--random" => {
+                let cats = include_str!("../res/cats.txt");
+                let cat_count: u8 = cats[cats.find(":").unwrap() + 1..cats.find(";").unwrap()]
+                    .parse()
+                    .expect("Error getting cat count");
+                let mut rng = rand::rng();
+                catid = rng.random_range(0..cat_count);
+            }
+            _ => return (err_msg, None),
+        }
+    }
+
+    (text, Some(catid))
 }
