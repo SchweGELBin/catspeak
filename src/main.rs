@@ -22,17 +22,20 @@ fn catspeak(text: &str, cat_index: Option<u8>) -> String {
 }
 
 fn get_text() -> (String, Option<u8>) {
-    let err_msg = "Error: See \"catspeak --help\"".to_string();
+    let usage_msg = "Usage: catspeak [options] \"<message>\"".to_string();
+    let help_msg = format!("Cowsay like program of a speaking cat\n\n{usage_msg}\n\nOptions:\n  -h, --help\tPrint this message\n  -r, --random\tUse a random cat").to_string();
+
     let args: Vec<String> = env::args().collect();
     if args.len() <= 1 {
-        return (err_msg, None);
+        return (usage_msg, None);
     }
+
     let mut option = String::new();
     let mut text = &args[1];
     if args[1].starts_with("-") {
         if args.len() <= 2 {
             if &args[1] != "--help" && &args[1] != "-h" {
-                return (err_msg, None);
+                return (usage_msg, None);
             }
         } else {
             text = &args[2];
@@ -40,15 +43,18 @@ fn get_text() -> (String, Option<u8>) {
         option = args[1].clone();
     }
     if &args[1] == "--help" || &args[1] == "-h" {
-        return ("Usage: catspeak <option> \"<message>\"".to_string(), None);
+        return (help_msg, None);
     }
     if option == "--random" || option == "-r" {
         let cats = include_str!("../res/cats.txt");
         let start = cats.find(":").unwrap();
         let end = cats.find(";").unwrap();
-        let cat_count: u8 = cats[start+1..end].parse().expect("Error getting cat count");
+        let cat_count: u8 = cats[start + 1..end]
+            .parse()
+            .expect("Error getting cat count");
         let mut rng = rand::thread_rng();
         return (text.to_string(), Some(rng.gen_range(0..cat_count)));
     }
+
     (text.to_string(), Some(0))
 }
