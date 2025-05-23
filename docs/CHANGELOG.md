@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2025-05-23
+
+### 🚀 Features
+
+- Add a third cat
+
+### 🐛 Bug Fixes
+
+- Syntax error in cats file
+
+### ⚙️ Miscellaneous Tasks
+
+- Add build workflow
+- Bump to 1.1.0
+
 ## [1.0.0] - 2025-05-23
 
 ### 🚀 Features
@@ -19,6 +34,7 @@ All notable changes to this project will be documented in this file.
 
 - Update Cargo.lock
 - Update dependencies
+- Bump to 1.0.0
 
 ## [0.4.0] - 2024-06-03
 
