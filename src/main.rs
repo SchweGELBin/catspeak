@@ -52,8 +52,8 @@ fn get_text() -> (String, Option<u8>) {
         let cat_count: u8 = cats[start + 1..end]
             .parse()
             .expect("Error getting cat count");
-        let mut rng = rand::thread_rng();
-        return (text.to_string(), Some(rng.gen_range(0..cat_count)));
+        let mut rng = rand::rng();
+        return (text.to_string(), Some(rng.random_range(0..cat_count)));
     }
 
     (text.to_string(), Some(0))
