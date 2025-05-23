@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0] - 2025-05-23
+
+### 🚀 Features
+
+- [**breaking**] Remove release-please in favor of git-cliff
+- Improve usage and help messages
+
+### 📚 Documentation
+
+- Move readme, license and changelog to ./docs
+- Move license back to root
+- *(license)* Bump copyright date
+
+### ⚙️ Miscellaneous Tasks
+
+- Update Cargo.lock
+- Update dependencies
+
 ## [0.4.0] - 2024-06-03
 
 ### 🚀 Features
