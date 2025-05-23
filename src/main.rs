@@ -22,10 +22,11 @@ fn catspeak(text: &str, cat_index: Option<u8>) -> String {
 }
 
 fn get_text() -> (String, Option<u8>) {
-    let name = "catspeak";
+    let name = env!("CARGO_PKG_NAME");
     let err_msg = format!("Error: See \"{name} --help\"");
     let usage_msg = format!("Usage: {name} [options] \"<message>\"");
-    let help_msg = format!("Cowsay like program of a speaking cat\n\n{usage_msg}\n\nOptions:\n  -h, --help\tPrint this message\n  -r, --random\tUse a random cat");
+    let help_msg = format!("Cowsay like program of a speaking cat\n\n{usage_msg}\n\nOptions:\n  -h, --help\tPrint this message\n  -v, --version\tPrint the program version\n  -r, --random\tUse a random cat");
+    let version_msg = format!("{name} {}", env!("CARGO_PKG_VERSION"));
 
     let mut catid = 0;
     let mut option: Option<String> = None;
@@ -54,6 +55,7 @@ fn get_text() -> (String, Option<u8>) {
     if option.is_some() {
         match option.unwrap().as_str() {
             "-h" | "--help" => return (help_msg, None),
+            "-v" | "--version" => return (version_msg, None),
             "-r" | "--random" => {
                 let cats = include_str!("../res/cats.txt");
                 let cat_count: u8 = cats[cats.find(":").unwrap() + 1..cats.find(";").unwrap()]
