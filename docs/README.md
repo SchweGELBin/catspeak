@@ -4,3 +4,15 @@
 [![GitHub Release](https://img.shields.io/github/v/release/SchweGELBin/catspeak)](https://github.com/SchweGELBin/catspeak/releases/latest)
 
 [Cowsay](https://github.com/piuccio/cowsay) like program of a speaking cat
+
+```
+$ catspeak "meow~"
+
+ |\ /|
+/ . . \
+\ _-_ /      meow~
+ |   |     _
+ |    \   /
+ |     |-/
+ |_|_ /
+```
