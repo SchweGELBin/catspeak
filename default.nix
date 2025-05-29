@@ -1,4 +1,8 @@
-{ lib, rustPlatform }:
+{
+  lib,
+  rustPlatform,
+  versionCheckHook,
+}:
 
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "catspeak";
@@ -6,6 +10,10 @@ rustPlatform.buildRustPackage (finalAttrs: {
 
   src = ./.;
   cargoLock.lockFile = ./Cargo.lock;
+
+  doInstallCheck = true;
+  nativeInstallCheckInputs = [ versionCheckHook ];
+  versionCheckProgramArg = "--version";
 
   meta = {
     description = "Cowsay like program of a speaking cat";
