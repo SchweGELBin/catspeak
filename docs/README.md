@@ -16,3 +16,35 @@ $ catspeak "meow~"
  |     |-/
  |_|_ /
 ```
+
+
+## Build
+
+### General
+``` bash
+git clone https://github.com/SchweGELBin/catspeak.git
+cd catspeak
+cargo build --release
+```
+Binary will be at `./target/release/catspeak`
+
+### Nix
+``` bash
+nix build github:SchweGELBin/catspeak
+```
+Binary will be at `./result/bin/catspeak`
+
+
+## Run
+
+### General
+``` bash
+git clone https://github.com/SchweGELBin/catspeak.git
+cd catspeak
+cargo run -- "meow~"
+```
+
+### Nix
+``` bash
+nix run github:SchweGELBin/catspeak -- "meow~"
+```
