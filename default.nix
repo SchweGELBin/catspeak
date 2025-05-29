@@ -1,7 +1,4 @@
-{
-  lib,
-  rustPlatform,
-}:
+{ lib, rustPlatform }:
 
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "catspeak";
