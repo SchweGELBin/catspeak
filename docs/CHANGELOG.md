@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.1] - 2025-06-01
+
+### 📚 Documentation
+
+- *(readme)* Add badges
+- Adds a preview to the README.md (#7)
+- *(readme)* Add build and run instructions
+
+### ⚙️ Miscellaneous Tasks
+
+- Add nix flake
+- Format default.nix
+- Add version check to default.nix
+- Update flake.lock
+- *(nix)* Set mainProgram to pname
+- *(cargo)* Add myself as author
+
 ## [1.2.0] - 2025-05-23
 
 ### 🚀 Features
@@ -11,6 +28,10 @@ All notable changes to this project will be documented in this file.
 ### ⚡ Performance
 
 - Control input arguments correctly
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump to 1.2.0
 
 ## [1.1.0] - 2025-05-23
 

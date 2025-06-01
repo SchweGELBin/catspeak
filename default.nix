@@ -6,7 +6,7 @@
 
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "catspeak";
-  version = "1.2.0";
+  version = "1.2.1";
 
   src = ./.;
   cargoLock.lockFile = ./Cargo.lock;

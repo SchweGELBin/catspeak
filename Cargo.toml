@@ -1,8 +1,8 @@
 [package]
 authors = ["SchweGELBin <schwegelbin@gmail.com>"]
-name = "catspeak"
-version = "1.2.0"
 edition = "2024"
+name = "catspeak"
+version = "1.2.1"
 
 [dependencies]
 rand = "^0.9"
