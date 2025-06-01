@@ -20,7 +20,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
     homepage = "https://github.com/SchweGELBin/catspeak";
     changelog = "https://github.com/SchweGELBin/catspeak/blob/v${finalAttrs.version}/docs/CHANGELOG.md";
     license = lib.licenses.mit;
-    mainProgram = "catspeak";
+    mainProgram = finalAttrs.pname;
     maintainers = with lib.maintainers; [ SchweGELBin ];
   };
 })
