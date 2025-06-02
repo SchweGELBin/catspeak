@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.2] - 2025-06-02
+
+### 📚 Documentation
+
+- *(readme)* Fix license path
+
+### ⚙️ Miscellaneous Tasks
+
+- *(nix)* Remove flake
+
 ## [1.2.1] - 2025-06-01
 
 ### 📚 Documentation
@@ -18,6 +28,7 @@ All notable changes to this project will be documented in this file.
 - Update flake.lock
 - *(nix)* Set mainProgram to pname
 - *(cargo)* Add myself as author
+- Bump to 1.2.1
 
 ## [1.2.0] - 2025-05-23
 
