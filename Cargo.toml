@@ -2,7 +2,7 @@
 authors = ["SchweGELBin <schwegelbin@gmail.com>"]
 edition = "2024"
 name = "catspeak"
-version = "1.2.2"
+version = "1.2.3"
 
 [dependencies]
 rand = "^0.9"

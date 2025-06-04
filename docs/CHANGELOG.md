@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file.
 ### ⚙️ Miscellaneous Tasks
 
 - *(nix)* Remove flake
+- Bump to 1.2.2
 
 ## [1.2.1] - 2025-06-01
 
