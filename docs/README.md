@@ -6,7 +6,7 @@
 [![TUR Version](https://repology.org/badge/version-for-repo/tur/catspeak.svg?header=tur)](https://github.com/termux-user-repository/tur)
 
 - [Cowsay](https://github.com/piuccio/cowsay) like program of a speaking cat
-- Available in my [nur expressions](https://github.com/SchweGELBin/nur-expressions) repo
+- Available in my [nur expressions](https://github.com/SchweGELBin/nur-expressions) repo and [Galaxy](https://codeberg.org/Milchi/Galaxy) channel
 
 ```
 $ catspeak "meow~"
